@@ -22,3 +22,11 @@ export function logout() {
     method: 'post'
   })
 }
+
+export function add(data) {
+  return request({
+    url: '/user/add',
+    method: 'post',
+    data
+  })
+}

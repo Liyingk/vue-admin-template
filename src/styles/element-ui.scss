@@ -1,4 +1,5 @@
 // cover some element-ui styles
+$theme-color: #1E87F0;
 
 .el-breadcrumb__inner,
 .el-breadcrumb__inner a {
@@ -6,7 +7,7 @@
 }
 
 .el-upload {
-  input[type="file"] {
+  input[type='file'] {
     display: none !important;
   }
 }
@@ -14,7 +15,6 @@
 .el-upload__input {
   display: none;
 }
-
 
 // to fixed https://github.com/ElemeFE/element/issues/2461
 .el-dialog {
@@ -39,6 +39,323 @@
 // dropdown
 .el-dropdown-menu {
   a {
-    display: block
+    display: block;
   }
+}
+
+.el-dropdown-menu {
+  width: 190px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.el-dropdown-menu__item {
+  text-align: center;
+
+}
+
+//el-input全局样式
+.el-input__inner {
+  border-radius: 2px;
+  border: 1px solid #ccc;
+
+  &:focus {
+    border: 1px solid $theme-color;
+  }
+}
+
+//el-select
+
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: $theme-color;
+}
+
+.el-select .el-input__inner:focus {
+  border-color: $theme-color;
+}
+
+.el-select-dropdown__item.selected {
+  color: $theme-color;
+}
+
+//el-table
+.el-table__header-wrapper {}
+
+.el-table--border th,
+.el-table__fixed-right-patch {
+  background: #F8F8F8;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+}
+
+//el-pagination
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .el-pager li {
+  background-color: #fff;
+  color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: $theme-color;
+  border: 1px solid $theme-color;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled):hover {
+  color: #ccc;
+}
+
+//el-form
+.el-form-item__label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+.el-form-item {
+  margin-bottom: 40px;
+}
+
+//el-checkbox
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: $theme-color;
+  border-color: $theme-color;
+}
+
+.el-checkbox__inner:hover {
+  border-color: $theme-color;
+}
+
+.el-checkbox__input.is-focus .el-checkbox__inner {
+  border-color: $theme-color;
+}
+
+.el-checkbox__input.is-checked+.el-checkbox__label {
+  color: $theme-color;
+}
+
+.el-pagination button,
+.el-pagination span:not([class*='suffix']) {
+  min-width: 5px;
+}
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a:hover {
+  color: $theme-color;
+}
+
+.el-range-editor.is-active,
+.el-range-editor.is-active:hover {
+  border-color: $theme-color;
+}
+
+.el-date-table td.end-date span,
+.el-date-table td.start-date span {
+  background-color: $theme-color;
+}
+
+.el-date-table td.today span {
+  color: $theme-color;
+}
+
+.el-button--text {
+  color: $theme-color;
+}
+
+.el-button.is-plain:focus,
+.el-button.is-plain:hover {
+  color: $theme-color;
+  border-color: $theme-color;
+}
+
+.el-date-table td.available:hover {
+  color: $theme-color;
+}
+
+.el-date-table td.current:not(.disabled) span {
+  background-color: $theme-color;
+}
+
+.el-radio__inner:hover {
+  border-color: $theme-color;
+}
+
+.el-radio__inner {
+  width: 16px;
+  height: 16px;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+  color: $theme-color;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  background: #fff;
+  border-color: $theme-color;
+}
+
+.el-radio__inner::after {
+  width: 10px;
+  height: 10px;
+}
+
+.el-radio__input.is-checked .el-radio__inner::after {
+  background-color: $theme-color;
+}
+
+//el-tag 综合变化
+$gray: #999999;
+
+.el-tag {
+  color: $gray;
+}
+
+.el-tag .el-icon-close {
+  color: #fff;
+  background: #ccc;
+  top: -15px;
+  right: -25px;
+}
+
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+  color: $gray;
+}
+
+.el-tag .el-icon-close:hover {
+  background-color: $gray;
+}
+
+.table-first-column {
+  background: #F8F8F8;
+}
+
+.el-message {
+  min-width: 10px;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__nav {
+  border-radius: 0;
+  border: none;
+}
+
+.el-tabs__item {
+  background: #F8F8F8;
+  color: #999999;
+}
+
+.el-tabs__item.is-active {
+  background: $theme-color;
+  color: #fff;
+}
+
+.el-tabs__item.is-active:hover {
+  color: #fff;
+}
+
+.el-tabs__item:hover {
+  cursor: pointer;
+  color: #999;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item {
+  border: none;
+}
+
+.el-tabs--card>.el-tabs__header {
+  border: none;
+}
+
+.el-tabs__header {
+  margin: 0 0 20px 0;
+}
+
+.el-textarea__inner:focus {
+  border-color: $theme-color;
+}
+
+.el-dialog__title {
+  font-size: 16px;
+  color: #666666;
+  font-family: Segoe UI;
+}
+
+.el-tabs__item {
+  width: 120px;
+  text-align: center;
+}
+
+.el-button--primary {
+  background: $theme-color !important;
+  border-color: $theme-color !important;
+}
+
+.el-button:focus,
+.el-button:hover {
+
+  background-color: rgba($theme-color, 0.15);
+  border-color: rgba($theme-color, 0.3)
+}
+
+.el-month-table td.today .cell {
+  color: $theme-color;
+}
+
+.el-month-table td .cell:hover {
+  color: $theme-color;
+}
+
+.el-month-table td.current:not(.disabled) .cell {
+  color: $theme-color;
+}
+
+.el-progress-bar__outer {
+  background: rgba($color: #fff, $alpha: 0.5)
+}
+
+.el-progress-bar__inner {
+  background: #fff;
+}
+
+.el-progress__text {
+  display: none;
+}
+
+.el-progress-bar {
+  padding-right: 20px;
+}
+
+.el-tag {
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  font-size: 14px;
+  color: #999;
+  padding: 0 20px 0 10px;
+}
+
+.el-tag--info {
+  background: #f8f8f8;
+}
+
+.el-table .cell {
+  line-height: 27px;
+}
+
+.el-tooltip__popper.is-dark {
+  max-width: 500px;
+}
+
+.el-month-table td.end-date .cell,
+.el-month-table td.start-date .cell {
+  background-color: $theme-color;
+
 }

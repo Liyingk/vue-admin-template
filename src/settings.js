@@ -1,16 +1,16 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: '后台管理系统模板',
 
   /**
    * @type {boolean} true | false
-   * @description Whether fix the header
+   * @description Whether fix the header 是否修复页眉
    */
-  fixedHeader: false,
+  fixedHeader: true,
 
   /**
    * @type {boolean} true | false
-   * @description Whether show the logo in sidebar
+   * @description Whether show the logo in sidebar 是否在侧栏中显示徽标
    */
-  sidebarLogo: false
+  sidebarLogo: true
 }

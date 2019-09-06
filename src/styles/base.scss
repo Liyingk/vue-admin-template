@@ -1,0 +1,96 @@
+//公共样式
+@charset 'utf-8';
+//主要的颜色
+$primary-color:#1E87F0;
+$green-color:#009204;
+$red-color:#FF0000;
+$orange-color:#F65527;
+$white-color:#fff;
+$grayc-color:#ccc;
+$gray6-color:#666;
+$gray9-color:#999;
+
+$pixel-top:10px;
+$pixel-left:20px;
+$pixel-radius:4px;
+
+//混合按钮 
+//普通按钮样式
+@mixin theme-button($color, $ptop, $pleft, $radius) {
+  border: 1px solid $color;
+  background: $color;
+  padding: $ptop $pleft;
+  height: 40px;
+  color: #fff;
+  border: none;
+  border-radius: $radius;
+}
+
+
+//幽灵按钮样式
+@mixin ghost-button($color) {
+  background: #fff;
+  color: $color;
+  padding: 2px 8px;
+  border: 1px solid $color;
+  border-radius: 2px;
+}
+
+//文字样式按钮
+@mixin text-button($color) {
+  color: $color;
+  padding: 0 10px;
+  background: #fff;
+  border: none;
+}
+
+.base-page {
+  //综合的样式父组件
+
+  //所有按钮样式
+  .theme-button-primary {
+    @include theme-button($primary-color, $pixel-top, $pixel-left, $pixel-radius)
+  }
+
+  .theme-button-green {
+    @include theme-button($green-color, $pixel-top, $pixel-left, $pixel-radius)
+  }
+
+  .theme-button-red {
+    @include theme-button($red-color, $pixel-top, $pixel-left, $pixel-radius)
+  }
+
+  .theme-button-orange {
+    @include theme-button($orange-color, $pixel-top, $pixel-left, $pixel-radius)
+  }
+
+  .theme-button-grayc {
+    @include theme-button($grayc-color, $pixel-top, $pixel-left, $pixel-radius)
+  }
+
+  .text-button-orange {
+    @include text-button($primary-color)
+  }
+
+  .text-button-green {
+    @include text-button($green-color)
+  }
+
+  .text-button-red {
+    @include text-button($red-color)
+  }
+
+  .text-button-grayc {
+    @include text-button($grayc-color)
+  }
+
+
+  //有颜色文字样式
+  .text-grayc {
+    color: $grayc-color;
+  }
+
+  .text-primary {
+    color: $primary-color;
+  }
+}
