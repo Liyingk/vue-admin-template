@@ -1,11 +1,11 @@
 import { login, logout, getInfo } from '@/api/user'
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken, setToken, removeToken, getLocalStorage, setLocalStorage } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
 const state = {
   token: getToken(),
-  name: '',
-  avatar: ''
+  name: getLocalStorage('userInfo') === null ? '' : getLocalStorage('userInfo').name,
+  avatar: getLocalStorage('userInfo') === null ? '' : getLocalStorage('userInfo').avatar,
 }
 
 const mutations = {
@@ -27,6 +27,10 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
+        const { name, avatar } = data.user
+        setLocalStorage('userInfo', data.user)
+        commit('SET_NAME', name)
+        commit('SET_AVATAR', avatar)
         commit('SET_TOKEN', data.token)
         setToken(data.token)
         resolve()
